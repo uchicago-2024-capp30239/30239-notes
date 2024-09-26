@@ -233,7 +233,7 @@ Final project will have a place where D3 will be helpful, but other options will
 After introductory lecture, some examples will continue to be in D3, but you will not need to understand their inner workings.
 
 <!--
-It has however, become a "library's library" in some ways. Most developers interact with d3 through a higher-level interface. 
+It has however, become a "library's library" in some ways. Most developers interact with D3 through a higher-level interface. 
 
 We will be learning Altair, which generates Vega JSON, which in turn is drawn using D3.
 
@@ -260,9 +260,10 @@ So, if you are here to learn visualization, I think that it is fair that you can
 ## Course Staff
 
 - James Turk
-- TODO
+- Krisha Mehta
+- Sam Huang
 
-**All official information will be on the course site and/or Ed as appropriate.**
+**All official information will be on the course site and/or Ed.**
 
 
 ---

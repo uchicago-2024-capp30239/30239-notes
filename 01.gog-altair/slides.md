@@ -135,10 +135,80 @@ Possible Exceptions?
 
 ---
 
-## Altair's Grammar
+## Altair
 
-Altair condenses several of the different pieces of the grammar to _"encoding channels"_.
+Altair is a Python visualization library that allows us to work from a grammar of graphics perspective.
 
-We've seen X, Y, and color, let's take a look at some examples of other encoding channels.
+It also is very flexible in output formats, which will be useful if you want to modify your graphics or make them interactive.
+
+Altair is built on top of **Vega-Lite**.
+
+Vega-Lite is a system that represents graphics in a JSON schema, and a set of tools that convert these JSON representations to images or interactive graphics.
 
 ---
+
+## Vega-Lite Example
+
+```json
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+  "data": {"url": "data/cars.json"},
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "Horsepower", "type": "quantitative"},
+    "y": {"field": "Miles_per_Gallon", "type": "quantitative"}
+  }
+}
+```
+Vega condenses several of the different pieces of the grammar to _"encoding channels"_.
+
+---
+
+![](vega.png)
+
+---
+
+## Altair
+
+```python
+import pandas as pd
+import altair as alt
+
+df = pd.read_csv("cars.csv")
+alt.Chart(df).encode(
+  x="Horsepower:Q",        # shorthand for simple features
+  alt.Y("Miles_per_Gallon:Q").title("Miles Per Gallon"),  # longer form w/ customization
+)
+```
+
+Altair is a Pythonic wrapper to create Vega-Lite JSON.  If you use it in a notebook, the resulting graphs will render inline.
+
+
+---
+
+## Altair Notebook
+
+<!-- at this point, see the marimo notebook in this directory -->
+
+--- 
+
+## Learning Altair
+
+To master a library like Altair, you'll go through the following phases:
+
+1. Learn the key concepts.
+    - Goal: Understand how the authors of Altair think about visualization.
+    - Achieved by: Reading user guide & watching tutorials.
+2. Internalize concepts & API.
+    - Goal: Be able to do common tasks without referring to documentation. (You'll always lean on documentation for specifics.)
+    - Achieved by: Working on assignments & experimentation. Reading API reference as needed.
+3. Mastery (not this quarter!)
+    - Goal: Be able to manipulate library to achieve most tasks. Understand limits.
+    - Achieved by: Regular use over months/years. Reading API reference and/or source code.
+
+---
+
+## Altair Assignment
+
+<!-- walk through of assignment setup & how it'll be graded -->

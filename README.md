@@ -14,19 +14,20 @@ Inside each directory, you're likely to find:
 
 - `slides.md` - My slides in raw markdown.
 - `slides.html` - My slides converted to a presentation. (using [`marp`](https://marpit.marp.app)) You can open this in your web browser (Type `open slides.html` from the command line.)
-- `*-notebook.py` - These are marimo notebooks (see below).
+- `*.ipynb` - These are Jupyter notebooks (see below).
 
-Not every week will have slides & a notebook, but one or the other should generally exist.
+Not every week will have both slides & a notebook.
 
 Other files, such as images & data will be kept in the appropriate folder.
 
-### Marimo Notebooks
+### Jupyter Notebooks
 
-Marimo notebooks are similar to Jupyter notebooks, but work much better with Git and have some other nice features I appreciate.
+You have a few options for working with `.ipynb` notebooks:
 
-If you have ever looked at a Jupyter notebook file (.ipynb) in an editor, you know they are large JSON files, and once they are checked into Git changes become very difficult to track.
+- `uv run jupyter lab` - the newer UI, will start a server and 
+- `uv run jupyter notebook` - the older UI, perfectly functional still
+- VS Code will open these in it's own editor
 
-To interact with a notebook, run:
+If you run one of the `uv run` options, you'll need to navigate to the .ipynb file in the window that opens in your browser.
 
-`uv run marimo edit <notebook-file>`
-
+**Note:** To stop a server, press `Ctrl-C` and then 'y' to the prompt.
