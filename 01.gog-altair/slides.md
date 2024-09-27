@@ -6,9 +6,9 @@
 
 ## Today
 
-- Grammar of Graphics
-- Types of Data
-- Intro to Altair
+- What is a **grammar of graphics** and how do we use it in practice?
+- What **types of data** do we encounter, and how does that affect visualizations?
+- Introduction to **Altair**
 
 ---
 
