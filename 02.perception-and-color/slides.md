@@ -199,7 +199,118 @@ TODO: example of 2D decomposition of a graph
 
 ---
 
-## Color
+## What is Color?
+
+Wavelengths of light are perceived as particular colors:
+![](linear_visible_spectrum.svg.png)
+
+In practice: we almost never see monochromatic color, light sources emit a spectrum & we perceive peaks.
+
+<!-- credit: https://en.wikipedia.org/wiki/File:Linear_visible_spectrum.svg -->
+
+---
+
+## Color & the Eye
+
+### Rods
+
+- "brightness" 
+- spread throughout retina
+- more sensitive in low light conditions
+
+### Cones
+
+- 3 types with peak sensitivity at different frequencies
+- concentrated in center of eye
+- less sensitive in low light conditions
+
+![bg right](cone-fundamentals.png)
+
+<!-- source https://commons.wikimedia.org/wiki/File:Cone-fundamentals-with-srgb-spectrum.svg -->
+
+---
+
+## Metamers ...
+
+TODO: slides from Alex maybe? or drop?
+
+---
+
+## Color Naming
+
+---
+
+## Color Models
+
+- CIE
+- RGB
+- HS(V|L|B)
+
+
+
+---
+
+## Color Channels & Data Types
+
+TODO: https://docs.google.com/presentation/d/1avOsobdcsTG6qaDVCSesIOBFcfxjH12d/edit#slide=id.p27
+TODO: (also 33 and 34)
+
+---
+
+## Back to Visualization
+
+### Uses of Color 
+Identify, Group, Layer, Highlight
+
+### Types of Palettes
+
+- qualitative
+- sequential
+- diverging
+
+### Hue Separation
+
+- distinct
+- grouped
+
+---
+
+## "Get it right in black & white"
+
+---
+
+## Legibility
+
+---
+
+## Cultural Considerations
+
+---
+
+## Human Variation
+
+---
+
+## What about "alpha"?
+
+You will often see a fourth channel: RGB**A**, HSL**A**.
+
+This is known as alpha transparency (translucency).
+
+This has to do with how the program in question *blends* the colors.
+
+By default, the second color drawn overdraws the first.
+
+With translucency we can get a sense of depth without resorting to 3D.
+
+- Use sparingly.
+- Variations are very subtle, and background dependent.
+
+TODO: example
+
+---
+
+## Tools
 
 ---
 
@@ -209,3 +320,5 @@ Thanks to Alex Hale, Andrew McNutt, and Jessica Hullman for sharing their materi
 
 - https://www.math.csi.cuny.edu/~mvj/GC-DataViz-S23/lectures/L6.html
 - https://en.wikipedia.org/wiki/Stevens%27s_power_law
+- https://colorusage.arc.nasa.gov
+- https://jamie-wong.com/post/color/ (great if you'd like to go deeper)
