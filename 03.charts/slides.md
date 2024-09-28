@@ -115,6 +115,15 @@ via junkcharts.typepad.com
 
 ---
 
+## How to Pick?
+
+- Quantitative / Quantitative: 
+- Quantitative / Temporal: 
+- Quantitative / Nominal: 
+- Nominal / Nominal: 
+
+---
+
 ### Bar Charts & Histograms
 
 - X/Y: Nominal (Binned Numerical - Histogram)
@@ -126,8 +135,8 @@ via junkcharts.typepad.com
 
 ### Line & Area Charts
 
-- X: Temporal
-- Y: Quantitative
+- X: Temporal / Quantitative
+- Y: Quantitative (means / sums)
 
 
 ![bg right width:600px](lines.png)
@@ -138,7 +147,7 @@ via junkcharts.typepad.com
 
 ![bg left width:600px](area.png)
 
-Combined X axis variable has meaning.
+Sum of stacked axis variable **must have meaning**.
 
 ---
 
@@ -195,29 +204,57 @@ Require some data manipulation using `transform_window` or pre-computing ranks. 
 
 ### Scatter & Bubble Plots
 
-![](bubble.png)
+![bg left width:600px](bubble.png)
 
 - X / Y: Quantitative
 
 Bubble charts use size as a 3rd dimension.
 
+(Note subtle but useful transparency usage as well.)
+
 ---
 
 ### Small Multiples / Faceting
 
-![](facet.png)
+![facet](facet.png)
 
 ![bg right](small-maps.png)
 
 <!-- source: https://www.juiceanalytics.com/writing/better-know-visualization-small-multiples -->
 
-Most useful when there is a nominal variable that charts vary on.
+Useful when there is a nominal variable being compared across two other dimensions.
 
 ---
 
-### Distributions
-
 ### Map Basics
+
+Two most common:
+
+- point maps
+- choropleths
+
+![bg left width:600px](london-trees.png)
+
+*Image: Trees in London, data.london.gov.uk*
+
+<!-- source: https://data.london.gov.uk/dataset/local-authority-maintained-trees#:~:text=The%20data%20does%20not%20represent,streets%2C%20private%20gardens%20and%20more. -->
+
+**We will revisit maps later in this course.**
+
+
+--- 
+
+## Two choropleths, same data.
+
+![bg width:600px](arcgis-chorolpleth.png)
+
+![bg width:600px](arcgis-choropleth2.png)
+
+<!-- source: https://carto.maps.arcgis.com/apps/webappviewer/index.html?id=7475c5788efe4c75a9642f552f61d568 -->
+
+Unit of measurement is incredibly important.
+
+Consider alternatives if district/population sizes vary significantly.
 
 ---
 
@@ -283,6 +320,8 @@ and/or
 You work at CERN.
 
 ![bg right width:700px](lhc.png)
+
+(Image: CERN Large Hadron Collider)
 
 ---
 
