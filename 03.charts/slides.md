@@ -28,7 +28,7 @@ theme: custom-theme
 
 - Graphical Integrity: Above all else, show the data.
 - Maximize the data-ink ratio.
-- Minimize chart-junk.
+- Minimize chart junk.
 - Aim for high chart density, consider *small multiples*.
 - Revision & Editing are essential.
 
@@ -113,35 +113,176 @@ via junkcharts.typepad.com
 
 ## Common Chart Types
 
+---
+
 ### Bar Charts & Histograms
+
+- X/Y: Nominal (Binned Numerical - Histogram)
+- Y/X: Quantitative
+
+![](bars.png)
+
+---
 
 ### Line & Area Charts
 
-### Sparklines
+- X: Temporal
+- Y: Quantitative
 
-### Strip Plot & Heatmap
+
+![bg right width:600px](lines.png)
+
+---
+
+### When to use stacked area charts?
+
+![bg left width:600px](area.png)
+
+Combined X axis variable has meaning.
+
+---
+
+### Heatmap
+
+![bg right width:600px](heatmap.png)
+
+- X & Y: Quantitative or Nominal
+- Color: Quantitative
+- `mark_rect`
+
+---
+
+### Strip Plot
+
+![bg left width:600px](strip.png)
+
+- Y: Nominal
+- X: Temporal or Quantitative
+- Color: Optional (any type)
+- `mark_tick`
+
+---
 
 ### Pie / Donut / Radial Charts
 
-### Ranked Line Chart
+![](pyramid.png)
 
-### Scatterplots
+Theta: Quantitative (ratio)
+Color: Nominal
+
+Direct comparison of segments is very difficult at n > 2.
+
+Only use when most important information is ratio between sizes, and relatively few categories.
+
+---
+
+![](pie-comparison.png)
+https://www.storytellingwithdata.com/blog/2020/5/14/what-is-a-pie-chart
+
+---
+
+### Bump / Rank Line Chart
+
+![width:200px left](rankline.png)
+
+![width:500px left](bump.png)
+
+Useful for showing changes in relative positioning.
+
+Require some data manipulation using `transform_window` or pre-computing ranks. (see Altair gallery examples.)
+
+---
+
+### Scatter & Bubble Plots
+
+![](bubble.png)
+
+- X / Y: Quantitative
+
+Bubble charts use size as a 3rd dimension.
+
+---
 
 ### Small Multiples / Faceting
+
+![](facet.png)
+
+![bg right](small-maps.png)
+
+<!-- source: https://www.juiceanalytics.com/writing/better-know-visualization-small-multiples -->
+
+Most useful when there is a nominal variable that charts vary on.
+
+---
 
 ### Distributions
 
 ### Map Basics
 
-### Altair Gallery Miscellania
-
 ---
 
 ## When & How to Break the Rules
 
-### 2 Examples: Hex / Grid maps ... Word Clouds
-### Narrative-supporting graphics
+**When in doubt...**
+
+- 95% of visualizations should be some variation of the common types.
+- Focus on Tufte's rules for clarity.
+
+---
+
+### Case Study: Two Innovations
+
+Two visualization types that have had their moment in the past 10-15 years:
+
+- Hex/Grid Maps
+- Word Clouds
+
+---
+
+## Grid Map
+
+![](npr-side-by-side.png)
+
+Introduced in <https://blog.apps.npr.org/2015/05/11/hex-tile-maps.html>
+
+
+<!-- discuss: is this a good thing? -->
+
+---
+
+## Word Cloud
+
+![](word-cloud.jpg)
+
+
+---
+
+![bg left](nyt1.png)
+![](nyt2.png)
+
+Derived from same data as word cloud.
+
+source: NYTimes via https://www.niemanlab.org/2011/10/word-clouds-considered-harmful/
+
+---
+
+## Narrative-supporting graphics
+
+![bg left width:500px](crochet.jpg)
+
+by ulaniulani on flickr
+
+---
+
 ### When it's OK to use 3D
+
+You have data that truly makes more sense in 3D.
+
+and/or
+
+You work at CERN.
+
+![bg right width:700px](lhc.png)
 
 ---
 
@@ -150,3 +291,6 @@ via junkcharts.typepad.com
 Thanks to Alex Hale, Andrew McNutt, and Jessica Hullman for sharing their materials.
 
 - https://www2.cs.uh.edu/~ceick/NO/COSC3337-DV2.pdf 
+- Images from Tufte's Visual Display of Quantitative Information
+- Images from Altair <https://altair-viz.github.io/gallery/index.html>
+
