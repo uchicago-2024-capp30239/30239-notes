@@ -192,10 +192,10 @@ Stevens measured values of a by exposing people to varied stimulus and asking th
 
 ## Instead of 3D Graphs
 
-- Find other channels: hue & size are good candidates.
-- Combine different dimensions into side-by-side 2D graphs.
+- Find other channels: hue & size are good candidates. (bubble chart)
+- Or make multiple 2D graphs with XY/YZ/XZ pairs.
 
-TODO: example of 2D decomposition of a graph
+![bg left](scatter-matrix.png)
 
 ---
 
@@ -230,37 +230,178 @@ In practice: we almost never see monochromatic color, light sources emit a spect
 
 ---
 
-## Metamers ...
+## Spectrum vs. What We See
 
-TODO: slides from Alex maybe? or drop?
+What we actually see is always a blend of multiple peaks.
+
+This is impacted by ambient light conditions, as well as quirks of our visual processing.
+
+![height:400px](the-dress.jpg)
+
+In actuality, multiple combinations of light can give same color (**metamers**).
+
+---
+
+## Chromatic Adaptation
+
+![](demo-bw-illusion-andrew-steele.gif)
+
+Source: Andrew Steele <https://www.youtube.com/channel/UC-XYsDNh4-886rMNLnnwR_w>
 
 ---
 
 ## Color Naming
 
+Color naming is highly subjective, and research has shown that the ability to name a color correlates highly with the ability to distinguish it.
+
+![bg right](xkcd-color-map.png)
+
+Be particularly careful with blue/green boundaries, as there are significant cultural differences.
+
+Source: https://blog.xkcd.com/2010/05/03/color-survey-results/
+
+
 ---
 
-## Color Models
+## Cultural Considerations
 
-- CIE
-- RGB
-- HS(V|L|B)
+![bg right width:600px](hok-uk.svg)
 
+- American audiences associated <span color="red">red</span> & <span color="blue">blue</span> with political parties on any map in a political context.
+- Also international meaning of <span color="red">red</span> & <span color="blue">blue</span> is flipped: red is left, blue is right.
+- Most other colors have contradictory meanings depending on culture. For example, yellow might be chosen to denote success (parts of Africa) or be associated with death (Middle East).
 
+<!--Source: https://www.color-meanings.com/color-symbolism-different-cultures/-->
+
+<!-- image from wikipedia: UK House of Commons -->
 
 ---
+
+## Color on a Page
+
+![bg right](cmyk.svg)
+
+Ink absorbs light, so we work with subtractive blending.  Our base colors are cyan, magenta, and yellow.  To save on ink costs, we throw in black/contrast as well.
+
+We call this CMYK color.
+
+---
+
+## Color on a Screen
+
+Screens emit light, which means we use **additive blending** of red, green, and blue light. Every pixel of a screen can emit these three colors in different intensities.
+
+A common way to refer to colors is by their intensity in each of these three channels.
+
+<span style="color: rgb(0% 100% 0%)">this is 0% red, 100% green, 0% blue intensity</span>
+<span style="color: rgb(20% 60% 20%)">this is 20% red, 60% green, 20% blue intensity</span>
+<span style="color: #ff00ff">this is 100% red, 0% green, 100% blue intensity</span>
+
+
+![bg right](additive.png)
+
+---
+
+### RGB space as a cube
+
+![cube](LinearRGBCube.png)
+
+---
+
+### RGB as pair plots
+
+![pair plots](RGBPairPlots.png)
+
+Remember this trick for your own 3-dimensional data!
+
+---
+
+![height:500px](TriangleSliceRGB.png)
+
+A slice through the middle of the cube gives colors of comparable brightness.  (You may have seen such a triangle in color pickers.)
+
+---
+
+## HSL
+
+![height:500px](HSL.png)
+
+An alternative color space that's very useful for visualization is HSL color space.
+
+Hue, Saturation, Luminosity
+
+---
+
+## Aside: What about "alpha"?
+
+![bg left](rgb-pixels.jpg)
+
+You will often see a fourth channel: RGB**A**, HSL**A**.
+
+This is known as alpha transparency (translucency).
+
+This has to do with how the program in question *blends* the colors. The final pixel values on the screen will still be converted to RGB components.
+
+- Use sparingly.
+- Variations are very subtle, and background dependent.
+
+<!-- image source: https://upload.wikimedia.org/wikipedia/commons/3/34/RGB_pixels.jpg -->
+
+---
+
+## CIE XYZ
+
+Derived in 1931(!) based on human perception.
+
+![bg right](cie-xyz.png)
+
+---
+
+## Screen Gamut
+
+Screens can't show the entire range of visible colors accurately, they define a "gamut".  Since ~1996 most devices aim at a standard gamut to ensure similar representations of color, but even high end devices are not perfectly aligned.
+
+![bg right](gamut2.png)
+
+Projectors (like the one you're likely viewing this on) usually have skewed gamut. 
+
+Moral of the story: **Consider your medium!**
+
+---
+
+## Other Variations
+
+TODO: colorblindness, etc.
+
+---
+
+## What does all this mean for visualization?
+
+Color choices should be made with respect to:
+
+  - medium (screen vs. print, type of screen)
+  - audience (culture, vision differences, expectations)
+  - differentiability
+
+---
+
+## Role of Color
+
+- **Identify** - Different color per category/actor.
+  - opt for distinct hues
+- **Group** - Group like entities using same/like colors.
+  - often with similar hues
+- **Layer** - Overlay different information while keeping contrast.
+  - saturation differences very important to not overwhelm eye
+- **Highlight** - Call out important/relevant information.
+  - brightness and hue differences important
+
+--- 
 
 ## Color Channels & Data Types
 
 TODO: https://docs.google.com/presentation/d/1avOsobdcsTG6qaDVCSesIOBFcfxjH12d/edit#slide=id.p27
 TODO: (also 33 and 34)
-
----
-
-## Back to Visualization
-
-### Uses of Color 
-Identify, Group, Layer, Highlight
 
 ### Types of Palettes
 
@@ -275,42 +416,36 @@ Identify, Group, Layer, Highlight
 
 ---
 
-## "Get it right in black & white"
-
----
-
 ## Legibility
 
----
+An important issue when using colored text and/or backgrounds is **legibility**.
 
-## Cultural Considerations
-
----
-
-## Human Variation
+TODO: font legibility image
 
 ---
 
-## What about "alpha"?
+## "Get it right in black & white"
 
-You will often see a fourth channel: RGB**A**, HSL**A**.
+A common mantra among visual designers.
 
-This is known as alpha transparency (translucency).
+Ensure that you aren't using hue alone for your image.
 
-This has to do with how the program in question *blends* the colors.
-
-By default, the second color drawn overdraws the first.
-
-With translucency we can get a sense of depth without resorting to 3D.
-
-- Use sparingly.
-- Variations are very subtle, and background dependent.
-
-TODO: example
+TODO: image
 
 ---
 
 ## Tools
+
+- Vega Schemes: https://vega.github.io/vega/docs/schemes/
+- Contrast/theme exploration: https://schubert-da.github.io/dataviz-palette-tool/
+- Theme exploration for cartography: <https://colorbrewer2.org/>
+- Color-theory based theme creator: https://meodai.github.io/poline/
+- Theme creator w/ theme sharing: https://coolors.co
+
+### Color-Blindness
+
+- MacOS/iOS app: https://michelf.ca/projects/sim-daltonism/
+- Browser extensions (search "colorblindness" in your browser of choice)
 
 ---
 
@@ -318,7 +453,8 @@ TODO: example
 
 Thanks to Alex Hale, Andrew McNutt, and Jessica Hullman for sharing their materials.
 
+Color space images are from <https://jamie-wong.com/post/color/>, which is an incredible resource if you'd like to go deeper into both the biology and math of color.
+
 - https://www.math.csi.cuny.edu/~mvj/GC-DataViz-S23/lectures/L6.html
 - https://en.wikipedia.org/wiki/Stevens%27s_power_law
 - https://colorusage.arc.nasa.gov
-- https://jamie-wong.com/post/color/ (great if you'd like to go deeper)
