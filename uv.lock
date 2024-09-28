@@ -16,6 +16,7 @@ dependencies = [
     { name = "pandas" },
     { name = "polars" },
     { name = "ruff" },
+    { name = "vega-datasets" },
 ]
 
 [package.metadata]
@@ -25,6 +26,7 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "polars", specifier = ">=1.8.2" },
     { name = "ruff", specifier = ">=0.6.8" },
+    { name = "vega-datasets", specifier = ">=0.9.0" },
 ]
 
 [[package]]
@@ -1694,6 +1696,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/ed/63/22ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260/urllib3-2.2.3.tar.gz", hash = "sha256:e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9", size = 300677 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ce/d9/5f4c13cecde62396b0d3fe530a50ccea91e7dfc1ccf0e09c228841bb5ba8/urllib3-2.2.3-py3-none-any.whl", hash = "sha256:ca899ca043dcb1bafa3e262d73aa25c465bfb49e0bd9dd5d59f1d0acba2f8fac", size = 126338 },
+]
+
+[[package]]
+name = "vega-datasets"
+version = "0.9.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pandas" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/8f/a0/ce608d9a5b82fce2ebaa2311136b1e1d1dc2807f501bbdfa56bd174fff76/vega_datasets-0.9.0.tar.gz", hash = "sha256:9dbe9834208e8ec32ab44970df315de9102861e4cda13d8e143aab7a80d93fc0", size = 215013 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e6/9f/ca52771fe972e0dcc5167fedb609940e01516066938ff2ee28b273ae4f29/vega_datasets-0.9.0-py3-none-any.whl", hash = "sha256:3d7c63917be6ca9b154b565f4779a31fedce57b01b5b9d99d8a34a7608062a1d", size = 210822 },
 ]
 
 [[package]]
