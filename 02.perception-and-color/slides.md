@@ -55,7 +55,7 @@ theme: custom-theme
 <div class="container">
 <div class="col">
 
-![](example1a.png)
+![](viz-1.png)
 
 </div><div class="col">
 
@@ -80,7 +80,7 @@ alt.Chart(random_df).mark_point().encode(
 <div class="container">
 <div class="col">
 
-![](example1b.png)
+![](viz-2.png)
 
 ```
 alt.Chart(random_df).mark_line().encode(
@@ -162,14 +162,14 @@ Stevens measured values of a by exposing people to varied stimulus and asking th
 
 | Continuum | Exponent |
 |-|-|
-| Color Brightness| 0.33-0.5 |
+| Color **Brightness**| 0.33-0.5 |
 | Smell| 0.6 |
 | Loudness | 0.67 |
 | **Depth Perception** | 0.67 | 
 | Area | 0.7 |
 | 2D Planar Position | 1.0 |
 | Warmth | 1.3-1.6 |
-| Color Saturation | 1.7 |
+| Color **Saturation** | 1.7 |
 | Electric Shock | 3.5 |
 
 </div></div>
@@ -204,7 +204,7 @@ Stevens measured values of a by exposing people to varied stimulus and asking th
 Wavelengths of light are perceived as particular colors:
 ![](linear_visible_spectrum.svg.png)
 
-In practice: we almost never see monochromatic color, light sources emit a spectrum & we perceive peaks.
+What's missing?
 
 <!-- credit: https://en.wikipedia.org/wiki/File:Linear_visible_spectrum.svg -->
 
@@ -214,15 +214,16 @@ In practice: we almost never see monochromatic color, light sources emit a spect
 
 ### Rods
 
-- "brightness" 
 - spread throughout retina
 - more sensitive in low light conditions
+- brightness ("lightness")
 
 ### Cones
 
 - 3 types with peak sensitivity at different frequencies
 - concentrated in center of eye
 - less sensitive in low light conditions
+- hue & saturation
 
 ![bg right](cone-fundamentals.png)
 
@@ -277,6 +278,19 @@ Source: https://blog.xkcd.com/2010/05/03/color-survey-results/
 
 ---
 
+## Color Vision Deficiency
+
+More accurate name for what is commonly known as colorblindness.
+
+- Red-Green CVD - most common
+    - four types: Dueteranomaly and Protanomaly (mild) to Protanopia and Dueteranopia (complete)
+- Tritanomaly/Tritanopia: blue/green and yellow/red confusion.
+- rarest, complete lack of color vision, usually corresponds to other vision issues as well
+
+![bg right width:600px](colorblind.jpg)
+
+---
+
 ## Color on a Page
 
 ![bg right](cmyk.svg)
@@ -291,14 +305,37 @@ We call this CMYK color.
 
 Screens emit light, which means we use **additive blending** of red, green, and blue light. Every pixel of a screen can emit these three colors in different intensities.
 
-A common way to refer to colors is by their intensity in each of these three channels.
-
-<span style="color: rgb(0% 100% 0%)">this is 0% red, 100% green, 0% blue intensity</span>
-<span style="color: rgb(20% 60% 20%)">this is 20% red, 60% green, 20% blue intensity</span>
-<span style="color: #ff00ff">this is 100% red, 0% green, 100% blue intensity</span>
 
 
 ![bg right](additive.png)
+
+---
+
+## Color Spaces
+
+Ways of describing a color mathematically, usually have 3 components to match our perception of color:
+
+- RGB (early photography)
+- CIE XYZ (1931)
+- HSB/HSV/HSL (1970s)
+
+![bg right width:700px](rgb-khan.jpg)
+
+<!-- https://commons.wikimedia.org/wiki/File:Rgb-compose-Alim_Khan.jpg -->
+
+---
+
+A common way to refer to colors is by their intensity in each of these three channels.
+
+<span style="color: rgb(0% 100% 0%)">this is 0% red, 100% green, 0% blue intensity (#00ff00)</span>
+<span style="color: rgb(20% 60% 20%)">this is 20% red, 60% green, 20% blue intensity: (#143c14)</span>
+<span style="color: #ff00ff">this is 100% red, 0% green, 100% blue intensity: #ff00ff</span>
+
+This is sometimes expressed in hexadecimal:
+
+![height:120px](hexrgb.png)
+
+![bg right](rgb-pixels.jpg)
 
 ---
 
@@ -328,13 +365,11 @@ A slice through the middle of the cube gives colors of comparable brightness.  (
 
 An alternative color space that's very useful for visualization is HSL color space.
 
-Hue, Saturation, Luminosity
+Hue, Saturation, Lightness | <https://hslpicker.com/>
 
 ---
 
 ## Aside: What about "alpha"?
-
-![bg left](rgb-pixels.jpg)
 
 You will often see a fourth channel: RGB**A**, HSL**A**.
 
@@ -349,9 +384,13 @@ This has to do with how the program in question *blends* the colors. The final p
 
 ---
 
-## CIE XYZ
+## CIE (RGB / XYZ / CIELAB)
 
-Derived in 1931(!) based on human perception.
+Based on human perception experiments where people would adjust dials to recreate colors out of red, green, and blue light.
+
+First from 1920s, revised in 1970s.
+
+*Commission internationale de l'éclairage*  (Illumination)
 
 ![bg right](cie-xyz.png)
 
@@ -366,12 +405,6 @@ Screens can't show the entire range of visible colors accurately, they define a 
 Projectors (like the one you're likely viewing this on) usually have skewed gamut. 
 
 Moral of the story: **Consider your medium!**
-
----
-
-## Other Variations
-
-TODO: colorblindness, etc.
 
 ---
 
@@ -400,27 +433,45 @@ Color choices should be made with respect to:
 
 ## Color Channels & Data Types
 
-TODO: https://docs.google.com/presentation/d/1avOsobdcsTG6qaDVCSesIOBFcfxjH12d/edit#slide=id.p27
-TODO: (also 33 and 34)
+### Lightness is perceived as ordered
 
-### Types of Palettes
+Good for **Ordinal** variables
 
-- qualitative
-- sequential
-- diverging
+![height:50px](ordinal.png)
 
-### Hue Separation
+**Quantitative** (Continuous) variables harder to discern
 
-- distinct
-- grouped
+![height:50px](qual.png)
+
+### Hue typically unordered
+
+**Nominal** variables.
+
+![height:50px](nominal.png)
 
 ---
 
-## Legibility
+### Types of Palettes
 
-An important issue when using colored text and/or backgrounds is **legibility**.
+- Qualitative - Nominal data
+- Sequential - Quantitative data
+- Diverging - Data with a meaningful zero-point (increase/decrease, more/less)
 
-TODO: font legibility image
+![](palette-types.jpg)
+
+<!-- source: Peter Aldhous, NICAR 2016 -->
+
+---
+
+### Hue Separation
+
+Pick distinct hues for unrelated variables.
+
+Grouped schemes can be used where there are relationships among the categories.
+
+![bg left width:600px](vega-schemes.png)
+
+<https://vega.github.io/vega/docs/schemes/>
 
 ---
 
@@ -428,9 +479,27 @@ TODO: font legibility image
 
 A common mantra among visual designers.
 
+Ensure that your hues have different brightness levels.
+
 Ensure that you aren't using hue alone for your image.
 
-TODO: image
+![bg left width:600px](vega-schemes-bw.jpg)
+
+---
+
+## Text Legibility
+
+An important issue when using colored text and/or backgrounds is **legibility**.
+
+Web Content Accessibility Guidelines require a 4.5 color contrast (3:1 for large text).
+
+Minimize *saturation* in backgrounds, pick a font color with opposing *lightness*.
+
+<https://webaim.org/resources/contrastchecker/>
+
+![bg left width:600px](contrast.png)
+
+
 
 ---
 
@@ -441,6 +510,8 @@ TODO: image
 - Theme exploration for cartography: <https://colorbrewer2.org/>
 - Color-theory based theme creator: https://meodai.github.io/poline/
 - Theme creator w/ theme sharing: https://coolors.co
+- HSL/RGB picker: <https://hslpicker.com/>
+- Contast checker: <https://webaim.org/resources/contrastchecker/>
 
 ### Color-Blindness
 
@@ -458,3 +529,5 @@ Color space images are from <https://jamie-wong.com/post/color/>, which is an in
 - https://www.math.csi.cuny.edu/~mvj/GC-DataViz-S23/lectures/L6.html
 - https://en.wikipedia.org/wiki/Stevens%27s_power_law
 - https://colorusage.arc.nasa.gov
+- https://vega.github.io/vega/docs/schemes/
+
