@@ -73,6 +73,16 @@ Exception: It is OK/common to pair color & shape, or for print color & texture t
 
 ---
 
+## Misleading Axes
+
+- not starting at 0
+- dual axes
+- pie charts that don't add up to 100
+
+TODO: add examples
+
+---
+
 ## Data-Ink Ratio
 
 - **Data-ink**: Ink (pixels) used to show data.
