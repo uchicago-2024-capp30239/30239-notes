@@ -475,6 +475,17 @@ Grouped schemes can be used where there are relationships among the categories.
 
 ---
 
+## Color Tips
+
+- Aim for no more than ~6 colors that need to be distinguished.
+- Colors should be distinct & differentiable by name.
+- Be mindful of cultural considerations & symbolism.
+- Ensure color schemes chosen appropriately for types of data.
+- "Get it right in black & white"
+
+
+---
+
 ## "Get it right in black & white"
 
 A common mantra among visual designers.
@@ -498,7 +509,6 @@ Minimize *saturation* in backgrounds, pick a font color with opposing *lightness
 <https://webaim.org/resources/contrastchecker/>
 
 ![bg left width:600px](contrast.png)
-
 
 
 ---
@@ -530,4 +540,3 @@ Color space images are from <https://jamie-wong.com/post/color/>, which is an in
 - https://en.wikipedia.org/wiki/Stevens%27s_power_law
 - https://colorusage.arc.nasa.gov
 - https://vega.github.io/vega/docs/schemes/
-

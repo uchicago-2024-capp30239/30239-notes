@@ -53,13 +53,15 @@ Graph length increase: 783%
 
 How many children get a spinal injury every year? (out of 74,000,000 children in US)
 
+Note: there are only 22,000 total spinal cord injuries a year in America (and most are 16-30yo).
+
 <!-- .0000003% -->
 
 ---
 
 3. Write out explanation of the data on the graphic itself. **Label important events** in the data.
 
-![](labeled.png)
+![bg right width:600px](labeled.png)
 
 ---
 
@@ -73,13 +75,29 @@ Exception: It is OK/common to pair color & shape, or for print color & texture t
 
 ---
 
-## Misleading Axes
+## Axes/Scale Mistakes
 
-- not starting at 0
-- dual axes
-- pie charts that don't add up to 100
+- Carefully consider not starting at zero.
+- Beware dual axes.
+- Consider audience when using log scale.
+- Related: No pie charts that don't add up to 100%
 
-TODO: add examples
+---
+
+![bg fit](tools_misleading_axes.png)
+
+---
+
+![bg fit](fox-bar.jpg)
+
+---
+
+![bg vertical fit](1080.png)
+
+---
+
+![bg fit](5920.png)
+
 
 ---
 
@@ -138,6 +156,7 @@ via junkcharts.typepad.com
 
 - X/Y: Nominal (Binned Numerical - Histogram)
 - Y/X: Quantitative
+- Area must be relevant on bar charts: no log scales/cut axes!
 
 ![](bars.png)
 
@@ -184,7 +203,7 @@ Sum of stacked axis variable **must have meaning**.
 
 ### Pie / Donut / Radial Charts
 
-![](pyramid.png)
+![bg right fit](pyramid.png)
 
 Theta: Quantitative (ratio)
 Color: Nominal
@@ -192,6 +211,8 @@ Color: Nominal
 Direct comparison of segments is very difficult at n > 2.
 
 Only use when most important information is ratio between sizes, and relatively few categories.
+
+**Must add up to 100%**
 
 ---
 
@@ -228,11 +249,17 @@ Bubble charts use size as a 3rd dimension.
 
 ![facet](facet.png)
 
-![bg right](small-maps.png)
+![bg right fit](small-maps.png)
 
 <!-- source: https://www.juiceanalytics.com/writing/better-know-visualization-small-multiples -->
 
 Useful when there is a nominal variable being compared across two other dimensions.
+
+---
+
+![bg fit](obama-treemap.png)
+
+<!-- source https://obamawhitehouse.archives.gov/interactive-budget -->
 
 ---
 
@@ -256,13 +283,13 @@ Two most common:
 
 ## Two choropleths, same data.
 
-![bg width:600px](arcgis-chorolpleth.png)
+![bg right vertical width:600px](arcgis-chorolpleth.png)
 
-![bg width:600px](arcgis-choropleth2.png)
+![bg right width:600px](arcgis-choropleth2.png)
 
 <!-- source: https://carto.maps.arcgis.com/apps/webappviewer/index.html?id=7475c5788efe4c75a9642f552f61d568 -->
 
-Unit of measurement is incredibly important.
+Color scale & unit of measurement is incredibly important.
 
 Consider alternatives if district/population sizes vary significantly.
 
@@ -272,8 +299,11 @@ Consider alternatives if district/population sizes vary significantly.
 
 **When in doubt...**
 
-- 95% of visualizations should be some variation of the common types.
-- Focus on Tufte's rules for clarity.
+9 out of 10 visualizations should be some variation of the common types.
+
+This does not need to hamper creativity, in the right context a little flourish can add a lot. But ensure that it does not obfuscate the data.
+
+Focus on Tufte's principles & ask for feedback!
 
 ---
 
@@ -323,14 +353,12 @@ by ulaniulani on flickr
 
 ### When it's OK to use 3D
 
-You have data that truly makes more sense in 3D.
+You have data that relates to a spatial third dimension.
 
-and/or
+![bg vertical right](snowfall.png)
+![bg right fit](lhc.png)
 
-You work at CERN.
-
-![bg right width:700px](lhc.png)
-
+(Image: Snowfall, NY Times)
 (Image: CERN Large Hadron Collider)
 
 ---
