@@ -10,4 +10,5 @@ dependencies = [
   "pandas>=2.2.3",
   "polars>=1.8.2",
   "ruff>=0.6.8",
+  "vega-datasets>=0.9.0",
 ]

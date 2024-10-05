@@ -1,0 +1,11 @@
+/* custom-theme.css */
+/* @theme custom-theme */
+
+@import "default";
+
+.container {
+  display: flex;
+}
+.col {
+  flex: 1;
+}

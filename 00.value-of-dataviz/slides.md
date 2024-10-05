@@ -335,7 +335,7 @@ Use of Altair is **strongly** recommended, but other libraries allowed.
 
 ---
 
-## Acknowledgements
+## Acknowledgements & References
 
 Thanks to Alex Hale, Andrew McNutt, and Jessica Hullman for sharing their materials.
 
