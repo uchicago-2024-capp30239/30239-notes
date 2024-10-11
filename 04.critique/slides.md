@@ -28,6 +28,22 @@
 
 ---
 
+## What to Look For
+
+**Expressiveness**: Does every choice further the understanding of the data?
+- Example: Consistent and clear channel mappings.
+
+**Effectiveness**: Can audience decipher data and meaning quickly? 
+- Example: Highlighting of primary elements.
+
+**Non-Data Elements**
+- Title, Label, Caption, Data Source, Annotations
+- Gridlines, Legend
+- Appropriate use of grouping/sorting.
+
+
+---
+
 ## Critique
 
 - What is the purpose of critique?
@@ -77,28 +93,9 @@ Extra eyes will help you identify what people are actually taking away from your
 
 ---
 
-## What to Look For
+## Receiving Critique
 
-### Expressiveness
-- Prioritizes important information / Avoids false inferences
-- Consistent visual mappings (e.g., respect color mappings)
-- Make encodings meaningful rather than arbitrary
-
-### Effectiveness
-- Facilitates accurate decoding / Minimizes cognitive overhead
-- Highlight elements of primary interest
-
-### Grouping / Sorting
-
-### Non-Data Elements
-- Descriptive: Title, Label, Caption, Data Source, Annotations
-- Reference: Gridlines, Legend
-
----
-
-## Taking Critique
-
-**Listen without defensiveness.** Do not interrupt initial feedback to point out "oh what that meant is ___", doing so will lead to missing important first impressions.
+**Listen without defensiveness.** Do not interrupt initial feedback to defend/clarify your intentions, doing so will lead to missing important first impressions.
 
 **Separate yourself from the work.** Remember the context you are doing this in, your peer is giving you their time to improve your work.
 
@@ -108,7 +105,7 @@ Extra eyes will help you identify what people are actually taking away from your
 
 ---
 
-## What to Avoid (Taking Critique)
+## What to Avoid (When Receiving Critique)
 
 **Convincing.** If someone misunderstood your viz, others will too. There's nothing to be gained by convincing them they actually do understand it.
 
@@ -124,6 +121,8 @@ Extra eyes will help you identify what people are actually taking away from your
 
 3) Start with some positive feedback. What is working well.
 
+---
+
 4) Offer constructive criticisms and other suggestions for improvements and things to try.  Author should mostly listen at this point, take notes, avoid the urge to respond to each piece of feedback as offered.
 
 5) Author can now ask clarifying questions and respond as appropriate.
@@ -134,51 +133,71 @@ Extra eyes will help you identify what people are actually taking away from your
 
 ---
 
-## Example 1
+![bg fit](nightingale-mortality.jpg)
 
-TODO: A Famous One
-
----
-
-## Example 2:
-
-TODO: Something from Amy
+<!-- Crimean War via Livia, <https://edstem.org/us/courses/68015/discussion/5428917> -->
 
 ---
 
-## Example
-
-Solving a unique problem
-
----
-
-## Example  
-
-Solving a unique problem
+![bg fit](lee-1pct.png)
+<!-- 1% of 1% via <https://sunlightfoundation.com/2013/06/26/1pct_of_the_1pct_polarization/> -->
 
 ---
 
-## Example 3: 
+![bg fit](chicago-segregation.png)
 
-TODO: gathering
-
----
-
-## Example 4:
-
-TODO: gathering
+<!-- Chicago Racial Segregation via Miguel, <https://edstem.org/us/courses/68015/discussion/5441644> -->
 
 ---
 
-## Example 5:
+![bg fit](grammys.png)
 
-TODO: gathering
+<!-- Grammys via Ruben, <https://edstem.org/us/courses/68015/discussion/5452397> -->
 
 ---
 
-## Example 6:
+![bg fit](leo.png)
 
-TODO: gathering
+<!-- DiCaprio via Amber -->
+
+---
+
+![bg fit](nc-538.png)
+
+<!-- Will's NC Seats via <https://projects.fivethirtyeight.com/partisan-gerrymandering-north-carolina/>  -->
+
+---
+
+![bg fit](kfc.png)
+
+<!-- KFC from Minh -->
+
+---
+
+![bg fit](immigration.jpeg)
+<!-- hungarian immigration from Dorka -->
+
+---
+
+![bg fit](military.png)
+<!-- military from Tori -->
+
+---
+
+![bg fit](inequality.jpg)
+<!-- inequality by Yi-Huai -->
+
+---
+
+![bg fit](fox-sp500.png)
+
+<!-- Fox from Andrew -->
+
+---
+
+![bg fit](tx.jpg)
+
+<!-- tribes in texas from Echo -->
 
 ---
 
