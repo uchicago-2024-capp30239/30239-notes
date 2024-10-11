@@ -3,5 +3,5 @@ preview lecture:
 
 slides:
     for file in `ls */slides.md`; do \
-      marp --theme custom-theme.css $file; \
+      marp --theme --html custom-theme.css $file; \
     done

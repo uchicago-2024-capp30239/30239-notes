@@ -6,6 +6,9 @@ theme: custom-theme
 
 ## CAPP 30239
 
+![bg right](rainbow.jpg)
+<!-- photo CC-By https://flickr.com/photos/andreaskrispler/4651412740/ -->
+
 ---
 
 ## Today
@@ -415,6 +418,8 @@ Color choices should be made with respect to:
   - medium (screen vs. print, type of screen)
   - audience (culture, vision differences, expectations)
   - differentiability
+
+Using HSL to build a palette allows you to choose uniform brightness/saturation and pick hues as close together/far apart as needed.
 
 ---
 
