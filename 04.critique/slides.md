@@ -184,6 +184,36 @@ Extra eyes will help you identify what people are actually taking away from your
 
 ---
 
+![bg fit](military2.png)
+<!-- part 2 of military expenditure -->
+
+---
+
+![bg fit](nz.png)
+<!-- NZ -->
+
+---
+
+![bg fit](gender.png)
+<!-- gender -->
+
+---
+
+![bg fit](ny-radial.jpg)
+<!-- ny radial -->
+
+---
+
+![bg fit](tx-radial.jpg)
+<!-- tx radial -->
+
+---
+
+![bg fit](iraq.jpg)
+<!-- iraq -->
+
+---
+
 ![bg fit](inequality.jpg)
 <!-- inequality by Yi-Huai -->
 
@@ -201,7 +231,31 @@ Extra eyes will help you identify what people are actually taking away from your
 
 ---
 
+![bg fit](eye-colors.webp)
+
+<!-- eye color-->
+
+---
+
+![bg fit](dubois-slaves.jpg)
+
+<!-- DuBois slaves -->
+
+---
+
+![bg fit](dubois-hourglass.jpg)
+
+<!-- DuBois hourglass -->
+
+---
+
+![bg fit](github.png)
+
+<!-- github -->
+
+---
+
 ## Readings & Sources
 
 - [Critiquing data visualizations: A discussion on channeling empathy and productivity]( https://www.tableau.com/blog/critiquing-data-visualizations-channel-empathy-and-be-productive)
-- TODO: https://policyviz.com/2020/07/19/critiquing-a-data-visualization-critique/
+- <https://policyviz.com/2020/07/19/critiquing-a-data-visualization-critique/>
