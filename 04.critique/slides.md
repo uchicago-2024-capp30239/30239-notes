@@ -5,7 +5,10 @@
 
 - Review common rules & mistakes.
 - What makes a useful critique?
-- Look at a lot of data viz examples.
+- **Look at a lot of examples.**
+
+Like any kind of visual art, creating good visualizations takes *learning to see*.
+
 
 ---
 
@@ -22,8 +25,8 @@
 
 - Data variation, not design variation.
 - Maximize data-ink ratio.
-- Remove all chart junk. (gridlines, shadows, 3d effects)
-- Context: title, axes, units, important events.
+- Strip out chart junk. (gridlines, shadows, 3d effects)
+- Add Context: title, axes, units, important events.
 - Alignment/Proximity: make comparisons easy & avoid misleading choices like changing axes between two otherwise identical graphs
 
 ---
@@ -31,10 +34,8 @@
 ## What to Look For
 
 **Expressiveness**: Does every choice further the understanding of the data?
-- Example: Consistent and clear channel mappings.
 
 **Effectiveness**: Can audience decipher data and meaning quickly? 
-- Example: Highlighting of primary elements.
 
 **Non-Data Elements**
 - Title, Label, Caption, Data Source, Annotations
@@ -56,7 +57,7 @@
 
 You are the expert on your data source, and it can be challenging to look at things through the eyes of your audience.
 
-Also it is likely that you've stared at variations of the same chart for an hour or more, easily overlooking small flaws.
+It is likely that you've stared at variations of the same chart for an hour or more, easily overlooking small flaws.
 
 Extra eyes will help you identify what people are actually taking away from your graphic:
 
@@ -77,9 +78,13 @@ Extra eyes will help you identify what people are actually taking away from your
 
 **Offer alternatives.** What could be done differently?
 
-- *"I like..."* - point out what works.
-- *"I wish..."* - frame negative feedback as ways that it could improve for audience.
-- *"What if..."* - new ideas and alternatives to consider.
+---
+
+## Critique Language
+
+**"I like..."** - point out what works.
+**"I wish..."** - frame negative feedback as ways that it could improve for audience.
+**"What if..."** - new ideas and alternatives to consider.
 
 **Be respectful.** Be mindful of your tone and word choice.
 
@@ -90,6 +95,10 @@ Extra eyes will help you identify what people are actually taking away from your
 **Comments on creator.** "You always...", "What were you thinking?", etc.  **Stay focused on the work.**
 
 **Bike-shedding.** Suggesting *arbitrary* changes based on your preferences. "If I made this, I'd have chosen green."
+
+![bg right height:200px](bikeshed.png)
+
+<https://bikeshed.org>
 
 ---
 
@@ -133,20 +142,73 @@ Extra eyes will help you identify what people are actually taking away from your
 
 ---
 
-![bg fit](nightingale-mortality.jpg)
-
-<!-- Crimean War via Livia, <https://edstem.org/us/courses/68015/discussion/5428917> -->
+## Practice Critique
 
 ---
 
-![bg fit](lee-1pct.png)
-<!-- 1% of 1% via <https://sunlightfoundation.com/2013/06/26/1pct_of_the_1pct_polarization/> -->
+![bg fit](nightingale-mortality.jpg)
+
+<!--
+Crimean War via Livia, <https://edstem.org/us/courses/68015/discussion/5428917>
+
+author: Florence Nightingale
+
+- legend?
+- labeling on the chart itself?
+-->
+
+---
+
+![bg fit](dubois-hourglass.png)
+
+<!--
+DuBois hourglass
+
+He pronounced his name De-bois
+
+not a pie chart! meant for direct comparison between the two types
+
+today this would be misread because people have seen pie charts
+-->
 
 ---
 
 ![bg fit](chicago-segregation.png)
 
-<!-- Chicago Racial Segregation via Miguel, <https://edstem.org/us/courses/68015/discussion/5441644> -->
+<!-- 
+Chicago Racial Segregation via Miguel, <https://edstem.org/us/courses/68015/discussion/5441644>
+
+type: map
+-->
+
+---
+
+![bg fit](dubois-slaves.jpg)
+
+<!--
+DuBois slaves visualization
+
+-->
+
+---
+
+![bg fit](eye-colors.webp)
+
+<!--
+eye color
+
+uncertainity
+why are some slices larger than others?
+does the eye in the middle mislead?
+-->
+
+---
+
+![bg fit](lee-1pct.png)
+<!-- 
+1% of 1% via <https://sunlightfoundation.com/2013/06/26/1pct_of_the_1pct_polarization/>
+-->
+
 
 ---
 
@@ -229,29 +291,18 @@ Extra eyes will help you identify what people are actually taking away from your
 
 <!-- tribes in texas from Echo -->
 
----
-
-![bg fit](eye-colors.webp)
-
-<!-- eye color-->
-
----
-
-![bg fit](dubois-slaves.jpg)
-
-<!-- DuBois slaves -->
-
----
-
-![bg fit](dubois-hourglass.jpg)
-
-<!-- DuBois hourglass -->
 
 ---
 
 ![bg fit](github.png)
 
-<!-- github -->
+<!--
+
+github
+two issues: scale is dependent on person's max commits
+more importantly: what we choose to visualize has an effect
+
+-->
 
 ---
 
