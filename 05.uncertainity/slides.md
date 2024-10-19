@@ -240,14 +240,13 @@ band + line
 ---
 ### Animating Uncertainty
 
-- 
-
+- <https://www.nytimes.com/interactive/2018/03/27/upshot/make-your-own-mobility-animation.html>
 - HOP Plot: <https://vallandingham.me/animating_uncertainty.html>
 
 ---
 ## References & Acknowledgements
 
+- <https://mucollective.co/uncertainty_collection/>
 - <https://clauswilke.com/dataviz/visualizing-uncertainty.html>
 - <https://www.mjskay.com/presentations/aalto2020-uncertainty.pdf>
 - <https://nightingaledvs.com/dark-sky-weather-data-viz/>
-- <https://mucollective.co/uncertainty_collection/>
