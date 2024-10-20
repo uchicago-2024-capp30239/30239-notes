@@ -47,6 +47,24 @@ Instead of a loosely connected series of images, take reader on a journey with a
 
 ---
 
+## Medium is the Message
+
+"[...]medium is the message. This is merely to say that the
+personal and social consequences of any medium— that is, of any extension of ourselves— result from the new scale that is introduced into our affairs by each extension of ourselves, or by any new technology."
+
+*Marshall McLuhan, Understanding Media: The Extensions of Man, 1964.*
+
+The nature of a narrative is shaped by (dominated by) the medium chosen.
+
+- Standard "Print" Article
+- Infographic
+- Live Presentation
+- Video / Animation
+- Museum / In Person Interaction
+- Web Interactives
+
+---
+
 ## News Article Format
 
 **Lede/Lead** - Opening paragraph. Summarize key ideas & grab attention.
@@ -56,39 +74,59 @@ Instead of a loosely connected series of images, take reader on a journey with a
 
 ![bg right fit](pyramid.svg)
 
-Other Formats: <https://en.wikipedia.org/wiki/Article_structure>
+Example: [Chicago Missing Persons](https://chicagomissingpersons.com/who-goes-missing/) Pulitzer-winning long form piece that CAPP Alum Aïcha Camara contributed to.
 
-TODO: examples
 
 ---
 
-## Medium is the Message
+## "Print" Article
 
-The nature of a narrative is shaped by (dominated by?) the medium chosen.
+Even if initially viewed on a screen, use static design so can be copied/printed/shared easily.
 
-Marshall McLuhan, Understanding Media: The Extensions of Man, 1964.
+No vital information in tooltips, animation, etc.
+
+- Text-forward, with supporting visuals. *-or-*
+- Visual-centric, with explanatory text.
 
 ---
 
 ## Infographic
 
-Typically a single-page image with an arrangement of graphics, tables, and brief narratives.
+Can be built around a single chart, or combine many into a story.
+Typically a single-page image with an arrangement of graphics, tables, and brief narrative.
 
 Typically aimed at general audiences, easy to share online, can be designed to work well in print.
 
-TODO: examples
+Important to think about visual flow, keep information organized.
+
+Examples:
+- <https://www.wri.org/data/infographic-global-carbon-budget>
 
 ---
 
+![bg fit](baseball1.png)
+
+---
+
+![bg fit](baseball2.png)
+
+---
+
+![bg fit](aftermarket-education-infographic.png)
+
+---
+<font size="140%">
+
 ## Live Presentation
 
-A live presentation with slides.
+Few words, large fonts.
 
-Special consideration should be given to legibility from a distance.
+Legibility from distance.
 
-If detailed visualizations play a role: consider print versions.
+Nature of audience/projector/room.
 
-TODO: examples
+**Print handouts if visualizations have lots of detail.**
+</font>
 
 ---
 
@@ -101,24 +139,95 @@ Video can blend presentation with commentary and narrative.
 ### Examples
 
 - [The best stats you've ever seen - Hans Rosling](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen?subtitle=en)
-TODO: examples
+- [Planetary Visualization](https://vimeo.com/555245282) (thanks Sam!)
+- [NYT Thanksgiving Flight Animations](https://www.nytimes.com/interactive/2015/11/24/upshot/thanksgiving-flight-patterns.html) (thanks Krisha!)
+
+---
+
+## Museum Interactives
+
+[Blue Paradox @ MSI](https://www.blueparadox.com/en/the-exhibit) - Thanks Magdalena!
 
 ---
 
 ## Interactive Stories
 
-Take advantage of web as a medium.
+Can take advantage of web as a medium. Seamlessly blend text, images, audio and video, and interactive elements.
 
-Can seamlessly blend text, images, audio and video, and interactive elements.
+### Potential Benefits
 
-- [NYT Snow Fall](https://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek)
-TODO: examples
+- Reducing Cognitive Load
+- Personalization for Reader
+- Making Information Playful
+- Prompting Self-Reflection
+
+**Caveat:** Can overwhelm with options, lose sight of what's important.
 
 ---
 
-## Interactive Articles
+### Reducing Cognitive Load
 
-TODO: 5 affordances
+Make data pleasant, avoid rigidity of visualization designed for print.
+
+Animations, tooltips, drop-downs, sliders, zoom & pan, highlights.
+Used artfully, these can provide ways for complex data to be presented in a more digestible way.
+
+In practical terms, Altair will allow a lot of this, handling the JS for you via Vega-Lite.
+
+Examples:
+- <https://flowingdata.com/2015/12/15/a-day-in-the-life-of-americans/>  (thanks David!)
+- <https://ourworldindata.org/grapher/covid-people-vaccinated-marimekko?time=2023-04-16>
+- <https://www.nytimes.com/interactive/2018/03/27/upshot/make-your-own-mobility-animation.html>
+- <https://especiales.eldiario.es/spain-lives-in-flats/> (thanks Michael!)
+
+---
+
+### Personalization For Reader
+
+Engage reader better by showing them the data most relevant to them first.
+
+Excellent way to drill down in large data sets to make it meaningful to reader.
+
+Examples:
+- <https://www.nature.org/en-us/get-involved/how-to-help/carbon-footprint-calculator/carbon-by-birth-year/>
+- <https://www.nytimes.com/interactive/2018/08/30/climate/how-much-hotter-is-your-hometown.html>
+
+---
+
+### Making Information Playful
+
+Give people tools to explore or run simulations on their own in the browser.
+Encourages exploration & engagement.
+
+Examples:
+- <https://publicdomain.nypl.org/pd-visualization/>
+- <https://www.nytimes.com/interactive/2024/upshot/buy-rent-calculator.html>
+- <https://www.economist.com/big-mac-index> (thanks Paul!)
+- <https://pudding.cool/2017/05/song-repetition/> (thanks Daniel!)
+
+---
+
+### Prompting Self-Reflection
+
+Encourage people to reflect upon expectations & experiences relevant to framing of story.
+
+NYT "You Draw It" Series:
+- <https://www.nytimes.com/interactive/2017/04/14/upshot/drug-overdose-epidemic-you-draw-it.html>
+- <https://www.nytimes.com/interactive/2015/05/28/upshot/you-draw-it-how-family-income-affects-childrens-college-chances.html>
+
+---
+
+### More Examples...
+
+[NYT Snow Fall](https://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek)
+[Google Public Data Explorer](https://www.google.com/publicdata/explore)
+- [pudding.cool](https://pudding.cool) - a data visualization magazine, with lots more inspiration
+
+<!-- these don't neatly fit into the above categories,
+
+does Google Data explorer overwhelm the user? circa 2010 lots of attempts
+to create "one viz to rule them all"
+-->
 
 ---
 
@@ -137,7 +246,7 @@ TODO: 5 affordances
 - **PNG** - Lossless raster image format. Should be preferred if SVG is not an option.
 - **JPG** - Image format that uses compression, suitable for photographs but not fine details in visualizations.
 
-TODO: images
+![bg right fit](bmp-vs-svg.png)
 
 ---
 
@@ -194,4 +303,5 @@ TODO: images
 ## References & Acknowledgements
 
 - Thanks to Alex Kale.
+- American Journalism Handbook: Leads & Nut Grafs: <https://ajh.rodrigozamith.com/creating-journalistic-content/leads-and-nut-grafs/>
 - <https://www.forbes.com/sites/evamurray/2019/02/11/data-visualization-and-the-power-of-persuasion/>
