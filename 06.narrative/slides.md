@@ -101,7 +101,7 @@ Important to think about visual flow, keep information organized.
 
 Examples:
 - <https://www.wri.org/data/infographic-global-carbon-budget>
-
+- <https://www.chartography.net/p/seeing-centuries-part-2>
 ---
 
 ![bg fit](baseball1.png)
@@ -204,6 +204,7 @@ Examples:
 - <https://www.nytimes.com/interactive/2024/upshot/buy-rent-calculator.html>
 - <https://www.economist.com/big-mac-index> (thanks Paul!)
 - <https://pudding.cool/2017/05/song-repetition/> (thanks Daniel!)
+- <https://bost.ocks.org/mike/algorithms/>
 
 ---
 
@@ -294,9 +295,9 @@ to create "one viz to rule them all"
 
 ### Honorable Mentions
 
+- **[Graphite](https://graphite.rs/learn/)** - Mix of GUI/programmatic SVG editing.
 - **BoxySVG** - Online/browser-based SVG editor.
 - **Canva** - Popular for infographics, collection of free clip art/etc. 
-
 
 ---
 

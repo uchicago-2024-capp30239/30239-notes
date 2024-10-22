@@ -208,7 +208,7 @@ band + line
 
 ---
 
-### Hurricane Uncertainity
+### Hurricane Uncertainty
 
 <div class="container">
 <div class="col">
