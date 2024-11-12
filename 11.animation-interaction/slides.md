@@ -29,9 +29,13 @@
     - Draw attention to changes
 - Show uncertainty
 
+More Examples:
+- <https://informationisbeautiful.net>
+- <https://www.visualcinnamon.com/portfolio/>
+
 ---
 
-TODO: examples of each of above
+![bg fit](https://clauswilke.com/dataviz/visualizing_uncertainty_files/figure-html/mpg-uncertain-HOP-animated-1.gif)
 
 ---
 
@@ -43,7 +47,8 @@ TODO: examples of each of above
 
 ---
 
-TODO: examples of each of above
+- Huge amount of data w/ user exploration: <https://pudding.cool/2024/11/love-songs/>
+- Personalization: <https://www.nytimes.com/interactive/2024/upshot/buy-rent-calculator.html>
 
 ---
 
@@ -61,13 +66,14 @@ How do you want to let a user select individual records or groups of records?
 - pre-written query with dropdowns/selects
 - query lang
 
----
-
-TODO: examples of each of the above
+Altair Interactive Charts <https://altair-viz.github.io/user_guide/interactions.html>
 
 ---
 
 ### Example: Voronai Diagram For Selection of Small Points
+
+- <https://d3js.org/d3-delaunay/voronoi>
+- <https://www.visualcinnamon.com/2015/07/voronoi/>
 
 ---
 
@@ -76,8 +82,3 @@ TODO: examples of each of the above
 - <https://vis.berkeley.edu/papers/animated_transitions/>
 - <https://explorabl.es>
 - <https://worrydream.com>
-
-TODO:
-- CSS Transitions Docs
-- D3 Chapter
-- My Notebook
