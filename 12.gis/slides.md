@@ -9,6 +9,10 @@ Establish a baseline understanding of GIS data.
 
 (Not focused on Data Viz)
 
+### Next
+
+Browser Mapping Libraries
+
 ---
 
 ## GIS Fundamentals
@@ -132,17 +136,20 @@ PCS is not so uniform, but most common is the **UTM** is the Transverse Mercator
 
 Localities will often publish in a more local projections:
 
-SPCS - State Plane Coordinate System, actually 125 zones with their own system across US.  They are fine-tuned to fit the shape of each state to maximize accuracy. (Some use transverse Mercator, some use a Lambert conformal conic projection, all with different parameters.
+SPCS - State Plane Coordinate System, actually 125 zones with their own system across US.  They are fine-tuned to fit the shape of each state to maximize accuracy. (Some use transverse Mercator, some use a Lambert conformal conic projection, all with different parameters.)
 
 ![bg right](a3585f84-8cf4-451c-b079-0bb2ac338c6d.jpg)
 (ce: conservation.ca.gov)
 
 ---
 
-## rm *.prj
+## Correct Projection is Essential
 
 In practice, it is **essential** that you know what CRS your data is in and what CRS you are displaying it in. 
-Failure to do so leads to incorrect results, heavily distorted maps, and real-world trouble.
+
+Failure leads to incorrect results, heavily distorted visualizations, and real-world trouble.
+
+![bg left fit](bad-proj.jpg)
 
 ---
 
