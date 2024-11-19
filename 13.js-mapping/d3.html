@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* style for tooltip as well as the base map container */
+      .tooltip {
+        position: absolute;
+        padding: 8px;
+        background: white;
+        border: 1px solid #333333;
+        border-radius: 4px;
+        pointer-events: none;
+        font-family: sans-serif;
+        font-size: 14px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="map"></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script>
+      const euMemberStates = {
+        Belgium: 1,
+        France: 1,
+        Germany: 1,
+        Italy: 1,
+        Luxembourg: 1,
+        Netherlands: 1,
+        Denmark: 2,
+        Ireland: 2,
+        Greece: 3,
+        Portugal: 4,
+        Spain: 4,
+        Austria: 5,
+        Finland: 5,
+        Sweden: 5,
+        Cyprus: 6,
+        "Czech Republic": 6,
+        Estonia: 6,
+        Hungary: 6,
+        Latvia: 6,
+        Lithuania: 6,
+        Malta: 6,
+        Poland: 6,
+        Slovakia: 6,
+        Slovenia: 6,
+        Bulgaria: 7,
+        Romania: 7,
+        Croatia: 8,
+      };
+
+      const width = 800;
+      const height = 600;
+      const svg = d3
+        .select("#map")
+        .append("svg")
+        .attr("viewBox", [0, 0, width, height])
+        .attr("width", width)
+        .attr("height", height);
+
+      // d3 tooltip pattern: create a placeholder div which will be
+      // hidden at first & revealed/moved as needed
+      const tooltip = d3
+        .select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+      // color function used for choropleth
+      const colorScale = d3
+        .scaleSequential()
+        .domain([8, 1]) // Reversed domain so earlier members are darker
+        .interpolator(d3.interpolateViridis);
+
+      // set up projection centered on Europe
+      const projection = d3
+        // DEMO: change projection
+        //   https://d3js.org/d3-geo/conic
+        //   https://github.com/d3/d3-geo-projection
+        .geoMercator()
+        //.geoConicEqualArea()
+        .center([15, 54])
+        .scale(600)
+        .translate([width / 2, height / 2]);
+      const path = d3.geoPath().projection(projection);
+
+      // load TopoJSON
+      d3.json(
+        // DEMO change to 110m/10m
+        "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json",
+      ).then((data) => {
+        // using topojson 3rd party library to convert to GeoJSON which D3 understands
+        const geojson = topojson.feature(data, data.objects.countries);
+
+        // entire map render happens after data is loaded, in the then() function
+        const europeCountries = geojson.features.filter(
+          (d) => euMemberStates[d.properties.name] !== undefined,
+        );
+
+        svg
+          .selectAll("path")
+          .data(europeCountries)
+          .join("path")
+          .attr("d", path)
+          .attr("fill", (d) => {
+            const score = euMemberStates[d.properties.name];
+            return score ? colorScale(score) : "#ccc";
+          })
+          .attr("stroke", "white")
+          .attr("stroke-width", 0.5)
+          .on("mouseover", function (event, d) {
+            tooltip.transition().duration(200).style("opacity", 0.9);
+            tooltip
+              .html(
+                `
+              <strong>${d.properties.name}</strong><br/>
+              Wave: ${euMemberStates[d.properties.name]}
+            `,
+              )
+              .style("left", event.pageX + 10 + "px")
+              .style("top", event.pageY - 28 + "px");
+          })
+          .on("mouseout", function () {
+            tooltip.transition().duration(500).style("opacity", 0);
+          });
+
+        // example of a legend, not related to map topics
+        const legendWidth = 200;
+        const legendHeight = 20;
+        const legendScale = d3
+          .scaleLinear()
+          .domain([1, 8])
+          .range([0, legendWidth]);
+
+        const legendAxis = d3
+          .axisBottom(legendScale)
+          .ticks(8)
+          .tickFormat((d) => d);
+
+        const legend = svg
+          .append("g")
+          .attr(
+            "transform",
+            `translate(${width - legendWidth - 20}, ${height - 50})`,
+          );
+
+        const defs = svg.append("defs");
+        const gradient = defs
+          .append("linearGradient")
+          .attr("id", "legend-gradient")
+          .attr("x1", "0%")
+          .attr("x2", "100%")
+          .attr("y1", "0%")
+          .attr("y2", "0%");
+
+        // Add gradient stops
+        const stops = d3.range(0, 8);
+        stops.forEach((stop, i) => {
+          gradient
+            .append("stop")
+            .attr("offset", `${(i / (stops.length - 1)) * 100}%`)
+            .attr("stop-color", colorScale(stop));
+        });
+
+        legend
+          .append("rect")
+          .attr("width", legendWidth)
+          .attr("height", legendHeight)
+          .style("fill", "url(#legend-gradient)");
+
+        legend
+          .append("g")
+          .attr("transform", `translate(0, ${legendHeight})`)
+          .call(legendAxis);
+      });
+    </script>
+  </body>
+</html>

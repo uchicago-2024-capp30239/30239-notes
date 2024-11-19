@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- maplibre needs custom CSS loaded to style its maps and controls -->
+    <link
+      href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      #map-goes-here {
+        height: 500px;
+        width: 100%;
+      }
+      #info {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+      }
+      #controls {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map-goes-here"></div>
+    <div id="info">placeholder</div>
+    <div id="controls">
+      <button id="zoom-fit">Fit All Points</button>
+      <button id="zoom-us">Fit US</button>
+    </div>
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <script>
+      const watercolor = {
+        version: 8,
+        sources: {
+          "raster-tiles": {
+            type: "raster",
+            tiles: [
+              // NOTE: Layers from Stadia Maps do not require an API key for localhost development or most production
+              // web deployments. See https://docs.stadiamaps.com/authentication/ for details.
+              "https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg",
+            ],
+            tileSize: 256,
+            attribution:
+              'Map tiles by <a target="_blank" href="https://stamen.com">Stamen Design</a>; Hosting by <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>. Data &copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a> contributors',
+          },
+        },
+        layers: [
+          {
+            id: "simple-tiles",
+            type: "raster",
+            source: "raster-tiles",
+            minzoom: 0,
+            maxzoom: 22,
+          },
+        ],
+      };
+
+      const tileJSON =
+        "https://tiles.stadiamaps.com/styles/alidade_smooth.json";
+      const map = new maplibregl.Map({
+        container: "map-goes-here",
+        center: [-87.6298, 41.8781],
+        zoom: 12,
+        style: tileJSON,
+        // DEMO toggle style
+        style: watercolor,
+      });
+
+      const points = [
+        { lat: 41.8826, lng: -87.6233, name: "Millennium Park" },
+        { lat: 41.8916, lng: -87.6083, name: "Navy Pier" },
+        { lat: 41.8526, lng: -87.6188, name: "Museum of Science and Industry" },
+      ];
+
+      // some features expect GeoJSON in the format shown here.
+      // in practice we may load from an API or source file
+      // if possible, it is OK to embed data directly like this
+      // (Outside of this example I would probably move this to a function for reuse.)
+      const geojson = {
+        type: "FeatureCollection",
+        features: points.map((point) => ({
+          type: "Feature",
+          // this should be one of the OGR geometries (Point/Line/Polygon/etc.)
+          geometry: {
+            type: "Point",
+            coordinates: [point.lng, point.lat],
+          },
+          // can put arbitrary data here in properties
+          properties: {
+            name: point.name,
+          },
+        })),
+      };
+
+      // looping over the GeoJSON, we add a marker & popup for each
+      // point in the data. the parameter here is a GeoJSON object
+      geojson.features.forEach((feature) => {
+        // these variables are just extracting data from the format seen above
+        // which is GeoJSON's representation of a geometry
+        const coordinates = feature.geometry.coordinates;
+        const name = feature.properties.name;
+
+        // add a marker for each point
+        const marker = new maplibregl.Marker()
+          .setLngLat(coordinates)
+          .addTo(map);
+
+        // add a popup with the point name
+        const popup = new maplibregl.Popup().setText(name);
+        marker.setPopup(popup);
+
+        // bind event listener to marker (identical to leaflet)
+        marker.getElement().addEventListener("click", () => {
+          const infoDiv = document.getElementById("info");
+          infoDiv.textContent = `Selected Location: ${name}`;
+        });
+      });
+
+      // fit all points -- a bit more complicated than Leaflet's version
+      document.getElementById("zoom-fit").addEventListener("click", () => {
+        const bounds = geojson.features.reduce((bounds, feature) => {
+          return bounds.extend(feature.geometry.coordinates);
+        }, new maplibregl.LngLatBounds());
+
+        map.fitBounds(bounds, { padding: 20 });
+      });
+
+      // fit entire US
+      document.getElementById("zoom-us").addEventListener("click", () => {
+        const usBounds = [
+          [-125.0, 24.396308], // Southwest corner [lng, lat]
+          [-66.93457, 49.384358], // Northeast corner [lng, lat]
+        ];
+        map.fitBounds(usBounds, { padding: 20 });
+      });
+    </script>
+  </body>
+</html>

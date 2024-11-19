@@ -1,0 +1,96 @@
+<!-- 
+See Also:
+https://leafletjs.com/examples/quick-start/
+https://leafletjs.com/examples.html
+-->
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <style>
+      #map-goes-here {
+        height: 500px;
+        width: 100%;
+      }
+      #info {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background: #f9f9f9;
+      }
+      #controls {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map-goes-here"></div>
+    <div id="info">placeholder</div>
+    <div id="controls">
+      <button id="zoom-fit">Fit All Points</button>
+      <button id="zoom-us">Fit US</button>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      const chicago = [41.8781, -87.6298];
+      const initialZoom = 12;
+      // Leaflet makes a global variable "L" available.
+      // this creates a map in the div above
+      const map = L.map("map-goes-here").setView(chicago, initialZoom);
+
+      // OSM base layer
+      // DEMO change of base layer
+      const watercolorURL =
+        "https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg";
+      const osmURL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+      L.tileLayer(osmURL, {
+        maxZoom: 19,
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      // points could be loaded from GeoJSON or any other source
+      // usage (below) does not depend on format
+      const points = [
+        { lat: 41.8826, lng: -87.6233, name: "Millennium Park" },
+        { lat: 41.8916, lng: -87.6083, name: "Navy Pier" },
+        { lat: 41.8526, lng: -87.6188, name: "Museum of Science and Industry" },
+      ];
+
+      // Add points to the map
+      const markers = [];
+      points.forEach((point) => {
+        const marker = L.marker([point.lat, point.lng]).addTo(map);
+
+        // adds a popup to the marker, can use HTML
+        marker.bindPopup(`<strong>${point.name}</strong>`);
+
+        // add custom events to markers in typical JS fashion
+        marker.on("click", function () {
+          const infoDiv = document.getElementById("info");
+          infoDiv.textContent = `Selected Location: ${point.name}`;
+        });
+
+        markers.push(marker);
+      });
+
+      // example of binding button events to modify the map
+      document.getElementById("zoom-fit").addEventListener("click", () => {
+        const groupBounds = new L.featureGroup(markers).getBounds();
+        map.fitBounds(groupBounds);
+      });
+      document.getElementById("zoom-us").addEventListener("click", () => {
+        const usBounds = [
+          [24.396308, -125.0], // Southwest corner (latitude, longitude)
+          [49.384358, -66.93457], // Northeast corner (latitude, longitude)
+        ];
+        map.fitBounds(usBounds);
+      });
+    </script>
+  </body>
+</html>
