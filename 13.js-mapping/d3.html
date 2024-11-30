@@ -45,7 +45,7 @@
         Finland: 5,
         Sweden: 5,
         Cyprus: 6,
-        "Czech Republic": 6,
+        Czechia: 6,
         Estonia: 6,
         Hungary: 6,
         Latvia: 6,
@@ -90,9 +90,11 @@
         .geoMercator()
         //.geoConicEqualArea()
         .center([15, 54])
-        .scale(600)
+        .scale(700)
         .translate([width / 2, height / 2]);
       const path = d3.geoPath().projection(projection);
+
+      let globalData = null;
 
       // load TopoJSON
       d3.json(
@@ -106,6 +108,7 @@
         const europeCountries = geojson.features.filter(
           (d) => euMemberStates[d.properties.name] !== undefined,
         );
+        console.log(europeCountries);
 
         svg
           .selectAll("path")

@@ -134,8 +134,19 @@ MaplibreGL/MapboxGL are mostly compatible.
 - Use library to render map(s) to div(s) on page.
 - Pick base layer, either raster or vector.
     - If vector, possibly apply additional styling to base.
-- Add additional vector layers based on your data & its features.
+- Add additional vector layers based on your data & its features. Do this using methods on the `map` object you got back in the earlier steps.
 - Attach event handlers for interactivity on your features and/or input elements adjacent to the map.
+
+---
+
+## Clustering
+
+![bg fit right](clustering.png)
+
+Helps reduce visual clutter and increase performance when there are many points.
+
+- <https://github.com/Leaflet/Leaflet.markercluster>
+- <https://maplibre.org/maplibre-gl-js/docs/examples/cluster/>
 
 ---
 

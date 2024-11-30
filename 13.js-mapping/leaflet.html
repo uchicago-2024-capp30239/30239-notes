@@ -42,14 +42,15 @@ https://leafletjs.com/examples.html
       const initialZoom = 12;
       // Leaflet makes a global variable "L" available.
       // this creates a map in the div above
-      const map = L.map("map-goes-here").setView(chicago, initialZoom);
+      const map = L.map("map-goes-here");
+      map.setView(chicago, initialZoom);
 
       // OSM base layer
       // DEMO change of base layer
       const watercolorURL =
         "https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg";
       const osmURL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
-      L.tileLayer(osmURL, {
+      L.tileLayer(watercolorURL, {
         maxZoom: 19,
         attribution: "© OpenStreetMap contributors",
       }).addTo(map);
