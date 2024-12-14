@@ -1,5 +1,7 @@
 # Data Visualization for Public Policy
 
+## Miscellaneous Odds & Ends
+
 ---
 
 ## This Week
